@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+
+
 export default function HeroHome() {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
@@ -54,7 +57,7 @@ export default function HeroHome() {
         </p>
 
         {/* BUTTONS */}
-        <div className="mt-10 flex justify-center gap-5 flex-wrap">
+        {/* <div className="mt-10 flex justify-center gap-5 flex-wrap">
           <button
             className="
               px-9 py-3 rounded-full bg-blue-600 text-white font-semibold
@@ -84,9 +87,48 @@ export default function HeroHome() {
           >
             OTHERS SECTION
           </button>
-        </div>
+        </div> */}
+
+        <div className="mt-10 flex justify-center gap-5 flex-wrap">
+  <Link href="/disposable-section">
+    <button
+      className="
+        px-9 py-3 rounded-full bg-blue-600 text-white font-semibold
+        shadow-lg transition-all duration-300
+        hover:bg-blue-700 hover:scale-105 hover:shadow-xl
+      "
+    >
+      DISPOSABLE SECTION
+    </button>
+  </Link>
+
+  <Link href="/drapes-section">
+    <button
+      className="
+        px-9 py-3 rounded-full bg-blue-600 text-white font-semibold
+        shadow-lg transition-all duration-300
+        hover:bg-blue-700 hover:scale-105 hover:shadow-xl
+      "
+    >
+      DRAPES SECTION
+    </button>
+  </Link>
+
+  <Link href="/others-section">
+    <button
+      className="
+        px-9 py-3 rounded-full border-2 border-white text-white font-semibold
+        transition-all duration-300
+        hover:bg-white hover:text-gray-900 hover:scale-105
+      "
+    >
+      OTHERS SECTION
+    </button>
+  </Link>
+</div>
 
       </div>
     </section>
   );
 }
+
