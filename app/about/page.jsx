@@ -35,10 +35,10 @@ export default function About() {
             Chittaranjan Moharana
           </h2>
           <p className="text-blue-700 font-medium mb-4">
-            Founder – Crown HealthCare
+            Founder – Crown HealthCare Disposables
           </p>
           <p className="text-gray-600 leading-relaxed">
-            Crown HealthCare was established in 2013 by our Founder & Visionary –
+            Crown HealthCare Disposables was established in 2013 by our Founder & Visionary –
             <span className="font-medium text-gray-800">
               {" "}
               Chittaranjan Moharana
@@ -68,7 +68,7 @@ export default function About() {
           </p>
 
           <p className="text-gray-600 leading-relaxed">
-            At Crown HealthCare, we remain committed to quality, affordability,
+            At Crown HealthCare Disposables, we remain committed to quality, affordability,
             and reliability — empowering healthcare professionals to deliver
             better patient care every day.
           </p>

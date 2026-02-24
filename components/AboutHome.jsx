@@ -21,12 +21,12 @@ export default function AboutUsSection() {
             </p>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
-              Crown HealthCare
+              Crown HealthCare Disposables
             </h2>
 
             <div className="space-y-5 text-gray-600 leading-relaxed text-sm sm:text-base">
               <p>
-                Crown HealthCare is a trusted name in the healthcare industry,
+                Crown HealthCare Disposables is a trusted name in the healthcare industry,
                 engaged in the manufacturing and supply of high-quality hospital
                 disposables and medical products.
               </p>
