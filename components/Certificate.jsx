@@ -4,11 +4,6 @@ import React from 'react';
 export default function Certificate() {
   const certificates = [
     {
-      id: 1,
-      title: 'ISO 13485 Certificate',
-      image: '/assests/img/LATEX-GLOVES.jpg'
-    },
-    {
       id: 2,
       title: 'ISO 13485:2016',
       image: '/assests/img/second_certificate.png'
@@ -23,13 +18,13 @@ export default function Certificate() {
           Certificates
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+        <div className="ml-auto mr-auto">
           {certificates.map((cert) => (
             <div
               key={cert.id}
               className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
             >
-              <div className="p-6 flex items-center justify-center h-80">
+              <div className="p-6 flex items-center justify-center w-full h-[600px]">
                 <img
                   src={cert.image}
                   alt={cert.title}

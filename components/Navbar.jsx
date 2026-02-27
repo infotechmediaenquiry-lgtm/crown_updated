@@ -89,7 +89,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img
-            src="/assests/img/logo3.png"
+            src="/assests/img/new_logo.png"
             alt="Logo"
             className="h-20 lg:h-24"
           />

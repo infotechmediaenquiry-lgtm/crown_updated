@@ -7,7 +7,7 @@ export default function About() {
       <div className="bg-blue-50 py-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">
-            About Crown HealthCare Disposables
+            About Crown Healthcare Disposables
           </h1>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Delivering quality hospital disposables and medical solutions with
@@ -35,10 +35,10 @@ export default function About() {
             Chittaranjan Moharana
           </h2>
           <p className="text-blue-700 font-medium mb-4">
-            Founder – Crown HealthCare Disposables
+            Founder – Crown Healthcare Disposables
           </p>
           <p className="text-gray-600 leading-relaxed">
-            Crown HealthCare Disposables was established in 2013 by our Founder & Visionary –
+            Crown Healthcare Disposables was established in 2013 by our Founder & Visionary –
             <span className="font-medium text-gray-800">
               {" "}
               Chittaranjan Moharana
@@ -68,7 +68,7 @@ export default function About() {
           </p>
 
           <p className="text-gray-600 leading-relaxed">
-            At Crown HealthCare Disposables, we remain committed to quality, affordability,
+            At Crown Healthcare Disposables, we remain committed to quality, affordability,
             and reliability — empowering healthcare professionals to deliver
             better patient care every day.
           </p>
