@@ -255,7 +255,7 @@ export default function ContactUsPage() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Email</p>
-                    <p className="text-gray-900 font-semibold">crownhealthcare72@yahoo.com</p>
+                    <p className="text-gray-900 font-semibold">crownhealthcare72@gmail.com</p>
                     <p className="text-gray-900 font-semibold">info@crownhealthcare.co.in</p>
                   </div>
                 </div>
@@ -271,7 +271,7 @@ export default function ContactUsPage() {
                   <div>
                     <p className="text-sm text-gray-600">Address</p>
                     <p className="text-gray-900 font-semibold">
-                      Gala No. 209, 2nd Floor, Bldg. No. 1,<br />
+                      209, 2nd Floor, Bldg. No. 1,<br />
                       Aman Paradise, Sativali Road,<br />
                       Vasai East, Palghar – 401208
                     </p>

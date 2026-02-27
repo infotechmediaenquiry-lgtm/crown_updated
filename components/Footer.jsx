@@ -5,7 +5,7 @@ export default function Footer() {
   // PDF Download Handler
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/assests/Brochure_Crown_Lowres-2.pdf'; // Your PDF file path
+    link.href = '/public/assests/Einweg Brochure.pdf'; // Your PDF file path
     link.download = 'Crown-Healthcare-Portfolio.pdf'; // Downloaded file name
     document.body.appendChild(link);
     link.click();
@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="bg-gradient-to-r from-blue-600 to-blue-500 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold text-center sm:text-left">
-            Crown HealthCare Disposables Portfolio
+            Crown Healthcare Disposables Portfolio
           </h2>
           <button
             onClick={handleDownload}
@@ -35,7 +35,7 @@ export default function Footer() {
           {/* Left Column - Contact Info */}
           <div className="space-y-4">
             <h3 className="text-white text-lg font-semibold mb-6">
-              Crown HealthCare Disposables :
+              Crown Healthcare Disposables :
             </h3>
 
             <div className="space-y-3 text-gray-300">
@@ -92,7 +92,7 @@ export default function Footer() {
             <div className="flex items-center gap-4 pt-4">
               <div className="bg-white p-4 rounded-lg shadow-lg">
                 <img
-                  src="/assests/img/logo1.png"
+                  src="/assests/img/new_logo.png"
                   alt="Crown Healthcare Disposable"
                   className="h-16 w-auto object-contain"
                 />
@@ -106,7 +106,7 @@ export default function Footer() {
       <div className="bg-gray-950 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <p className="text-gray-500 text-sm text-center">
-            © 2025 CrownHealthCare. All Rights Reserved.
+            © 2025 CrownHealthcare. All Rights Reserved.
           </p>
         </div>
       </div>
