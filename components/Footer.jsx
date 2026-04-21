@@ -6,7 +6,11 @@ export default function Footer() {
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = '/assests/Einweg Brochure.pdf'; // Your PDF file path
+<<<<<<< HEAD
     link.download = 'Crown-Healthcare-Portfolio.pdf'; // Downloaded file name
+=======
+    link.download = 'Einweg Brochure.pdf'; // Downloaded file name
+>>>>>>> cd5f03e (nimap)
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
