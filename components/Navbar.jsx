@@ -3,16 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, Search } from "lucide-react";
-// OPTION 1: If productsData.js is in same folder as Navbar
-// import { getAllProducts } from "./productsData";
 
-// OPTION 2: If productsData.js is in root data folder
-// import { getAllProducts } from "@/data/productsData";
-
-// OPTION 3: If productsData.js is in utils folder
-// import { getAllProducts } from "@/utils/productsData";
-
-// OPTION 4: If productsData.js is in lib folder
 import { getAllProducts } from "@/lib/productsData";
 
 const siteData = {
