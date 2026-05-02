@@ -26,6 +26,7 @@ const siteData = {
     { label: "Disposable Section", href: "/disposable-section" },
     { label: "Drape Section", href: "/drapes-section" },
     { label: "Other Section", href: "/others-section" },
+    { label: "Blog", href: "/blog" },
     { label: "Contact Us", href: "/contact" },
   ],
 };
