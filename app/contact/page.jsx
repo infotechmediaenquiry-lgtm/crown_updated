@@ -241,7 +241,7 @@ export default function ContactUsPage() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Phone</p>
-                    <p className="text-gray-900 font-semibold">+91 9152965753</p>
+                    <p className="text-gray-900 font-semibold">+91 9152965752</p>
                     <p className="text-gray-900 font-semibold">+91 84549 49544</p>
                   </div>
                 </div>
