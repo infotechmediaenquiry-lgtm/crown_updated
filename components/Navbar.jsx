@@ -88,7 +88,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden lg:flex gap-8 text-gray-600 absolute left-1/2 -translate-x-1/2">
+        <ul className="hidden lg:flex items-center gap-6 text-[15px] font-medium text-gray-600 whitespace-nowrap mx-auto">
           {siteData.nav.map((item, i) => (
             <li
               key={i}
