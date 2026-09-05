@@ -14,6 +14,16 @@ const nextConfig = {
         destination: 'https://crownhealthcare.co.in/:path*',
         permanent: true,
       },
+      {
+        source: '/disposable-section/1',
+        destination: '/disposable-section/disposable-aprons',
+        permanent: true,
+      },
+      {
+        source: '/disposable-section/2',
+        destination: '/disposable-section/disposable-bouffant-cap',
+        permanent: true,
+      },
     ];
   },
 };

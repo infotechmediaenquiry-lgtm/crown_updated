@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { getAllProducts } from "@/lib/productsData";
+import { getAllProducts, getProductUrl } from "@/lib/productsData";
 
 export default function AllProductsPage() {
   const allProducts = getAllProducts();
@@ -92,7 +92,7 @@ export default function AllProductsPage() {
                   className="flex-shrink-0"
                   style={{ width: getProductWidth() }}
                 >
-                  <Link href={`/${product.sectionSlug}/${product.id}`}>
+                  <Link href={getProductUrl(product)}>
                     <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:scale-105 transition-all">
                       <div className="bg-[#7FB3D5] p-6 flex items-center justify-center min-h-[220px]">
                         <img

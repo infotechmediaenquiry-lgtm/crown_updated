@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, Search } from "lucide-react";
 
-import { getAllProducts } from "@/lib/productsData";
+import { getAllProducts, getProductUrl } from "@/lib/productsData";
 
 const siteData = {
   hero: {
@@ -155,16 +155,16 @@ export default function Navbar() {
                     {searchResults.map((product) => (
                       <Link
                         key={product.id}
-                        href={`/${product.sectionSlug}/${product.id}`}
+                        href={getProductUrl(product)}
                         onMouseDown={(e) => {
                           e.preventDefault();
                           handleResultClick();
-                          window.location.href = `/${product.sectionSlug}/${product.id}`;
+                          window.location.href = getProductUrl(product);
                         }}
                         onTouchStart={(e) => {
                           e.preventDefault();
                           handleResultClick();
-                          window.location.href = `/${product.sectionSlug}/${product.id}`;
+                          window.location.href = getProductUrl(product);
                         }}
                         className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
                       >
@@ -249,16 +249,16 @@ export default function Navbar() {
               {searchResults.map((product) => (
                 <Link
                   key={product.id}
-                  href={`/${product.sectionSlug}/${product.id}`}
+                  href={getProductUrl(product)}
                   onMouseDown={(e) => {
                     e.preventDefault();
                     handleResultClick();
-                    window.location.href = `/${product.sectionSlug}/${product.id}`;
+                    window.location.href = getProductUrl(product);
                   }}
                   onTouchStart={(e) => {
                     e.preventDefault();
                     handleResultClick();
-                    window.location.href = `/${product.sectionSlug}/${product.id}`;
+                    window.location.href = getProductUrl(product);
                   }}
                   className="flex items-center gap-3 p-3 hover:bg-gray-50 border-b last:border-b-0 transition-colors cursor-pointer"
                 >

@@ -1,12 +1,19 @@
 "use client"
 import React, { useState, use } from 'react';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { getProductById, getRelatedProducts } from '@/lib/productsData';
 
 export default function DisposableProductDetailPage({ params }) {
   const resolvedParams = use(params);
   const productId = parseInt(resolvedParams.id);
+  
+  if (productId === 1) {
+    redirect('/disposable-section/disposable-aprons');
+  }
+  if (productId === 2) {
+    redirect('/disposable-section/disposable-bouffant-cap');
+  }
   
   const product = getProductById(productId);
 
