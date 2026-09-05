@@ -51,7 +51,7 @@ export default function DisposableSectionPage() {
           {currentProducts.map((product) => (
             <Link
               key={product.id}
-              href={`/disposable-section/${product.id}`}
+              href={product.id === 1 ? `/disposable-section/disposable-aprons` : product.id === 2 ? `/disposable-section/disposable-bouffant-cap` : `/disposable-section/${product.id}`}
               className="group"
             >
               {/* Product Card - NEW STYLE */}

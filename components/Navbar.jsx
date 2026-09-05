@@ -80,11 +80,13 @@ export default function Navbar() {
       <nav className="flex items-center justify-between px-6 lg:px-10 py-4 border-b bg-white relative z-50 sticky top-0 shadow-sm">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <img
-            src="/assests/img/new_logo.png"
-            alt="Logo"
-            className="h-20 lg:h-24"
-          />
+          <Link href="/">
+            <img
+              src="/assests/img/new_logo.png"
+              alt="Logo"
+              className="h-20 lg:h-24 cursor-pointer"
+            />
+          </Link>
         </div>
 
         {/* Desktop Nav */}
