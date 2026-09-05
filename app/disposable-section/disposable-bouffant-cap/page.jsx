@@ -77,8 +77,8 @@ export default function DisposableBouffantCapPage() {
               Crown Healthcare Disposables delivers premium non-woven and net bouffant caps for hospitals, food processing, laboratories, and industrial applications — in bulk, on time.
             </p>
             <div className="hero-btns">
-              <a href="#products" className="btn-primary">Explore Products →</a>
-              <a href="#contact" className="btn-outline">Request Bulk Quote</a>
+              <Link href="/disposable-section" className="btn-primary">Explore Products →</Link>
+              <Link href="/contact" className="btn-outline">Request Bulk Quote</Link>
             </div>
           </div>
           <div className="hero-img-wrap">
