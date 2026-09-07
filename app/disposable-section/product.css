@@ -47,7 +47,7 @@ tbody tr { border-bottom: 1px solid #D4C9BB; font-size: 0.9rem; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
 .overview-label { color: #2563eb; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.6rem; }
 .overview-heading { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; line-height: 1.25; margin-bottom: 1.25rem; }
-.overview-text { color: #5A5040; line-height: 1.8; margin-bottom: 1rem; }
+.overview-text { color: #fff; line-height: 1.8; margin-bottom: 1rem; }
 .overview-text-last { color: #5A5040; line-height: 1.8; }
 .overview-link { color: #2563eb; text-decoration: underline; text-underline-offset: 3px; }
 .stats-box { background: #EDE8DF; border-radius: 16px; padding: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
