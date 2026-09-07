@@ -18,6 +18,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://crownhealthcare.co.in"),
   title: "Crown Health Care - Leading Manufacturer of Hospital Disposables",
   description: "Quality hospital disposables and medical solutions with trust, innovation, and commitment",
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/crownhealthcare-favicon.png", type: "image/png" },
+    ],
+  },
   alternates: {
     canonical: "/",
   },

@@ -4,17 +4,25 @@ import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import { getProductById, getRelatedProducts } from '@/lib/productsData';
 
-export default function DisposableProductDetailPage({ params }) {
-  const resolvedParams = use(params);
-  const productId = parseInt(resolvedParams.id);
-  
-  if (productId === 1) {
-    redirect('/disposable-section/disposable-aprons');
-  }
-  if (productId === 2) {
-    redirect('/disposable-section/disposable-bouffant-cap');
-  }
-  
+const PRODUCT_SLUGS = {
+  1: 'disposable-aprons',
+  2: 'disposable-bouffant-cap',
+  4: 'disposable-coverall',
+  5: 'disposable-face-mask',
+  38: 'polythene-drape',
+  39: 'disposable-surgeon-cap',
+  40: 'disposable-surgeons-gown',
+  42: 'disposable-wraparound-gown',
+  44: 'ppe-kit',
+};
+
+const getProductHref = (productId) => (
+  PRODUCT_SLUGS[productId]
+    ? `/disposable-section/${PRODUCT_SLUGS[productId]}`
+    : `/disposable-section/${productId}`
+);
+
+export function DisposableProductDetail({ productId }) {
   const product = getProductById(productId);
 
   // Check if product exists
@@ -58,7 +66,7 @@ export default function DisposableProductDetailPage({ params }) {
       } else {
         setSubmitStatus({ type: 'error', message: data.error || 'Failed to send message. Please try again.' });
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({ type: 'error', message: 'Network error. Please check your connection and try again.' });
     } finally {
       setIsSubmitting(false);
@@ -158,7 +166,7 @@ export default function DisposableProductDetailPage({ params }) {
                 Interested in this product?
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Fill out the form and we'll get back to you with detailed information about <span className="font-semibold text-gray-900">{product.name}</span>. Our team is ready to assist you with pricing, specifications, and availability.
+                Fill out the form and we&apos;ll get back to you with detailed information about <span className="font-semibold text-gray-900">{product.name}</span>. Our team is ready to assist you with pricing, specifications, and availability.
               </p>
               
               <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
@@ -300,7 +308,7 @@ export default function DisposableProductDetailPage({ params }) {
                 {relatedProducts.map((relatedProduct) => (
                   <Link
                     key={relatedProduct.id}
-                    href={`/disposable-section/${relatedProduct.id}`}
+                    href={getProductHref(relatedProduct.id)}
                     className="group"
                   >
                     {/* Product Card - NEW STYLE */}
@@ -335,4 +343,15 @@ export default function DisposableProductDetailPage({ params }) {
       </div>
     </div>
   );
+}
+
+export default function DisposableProductDetailPage({ params }) {
+  const resolvedParams = use(params);
+  const productId = parseInt(resolvedParams.id);
+
+  if (PRODUCT_SLUGS[productId]) {
+    redirect(getProductHref(productId));
+  }
+
+  return <DisposableProductDetail productId={productId} />;
 }
