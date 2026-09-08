@@ -105,7 +105,7 @@ export default function DisposableFaceMaskPage() {
         <div className="features-inner">
           <p className="features-label">Product Highlights</p>
           <h2 className="features-heading">Key Features of Disposable Face Mask</h2>
-          <p className="overview-text" style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 3rem" }}>The disposable face mask is designed for use in situations where maintaining hygiene is important. It is worn during surgery and nursing procedures to support controlled environments and reduce bacterial movement.</p>
+          <p className="overview-text" style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 3rem", color: "rgba(255, 255, 255, 0.9)" }}>The disposable face mask is designed for use in situations where maintaining hygiene is important. It is worn during surgery and nursing procedures to support controlled environments and reduce bacterial movement.</p>
           <div className="three-col">
             {[
               { icon: "🛡️", title: "Protective Barrier", desc: "Helps reduce bacterial movement in healthcare and medical environments." },
