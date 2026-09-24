@@ -3,6 +3,18 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { getProductsBySection } from '@/lib/productsData';
 
+const PRODUCT_SLUGS = {
+  1: 'disposable-aprons',
+  2: 'disposable-bouffant-cap',
+  4: 'disposable-coverall',
+  5: 'disposable-face-mask',
+  38: 'polythene-drape',
+  39: 'disposable-surgeon-cap',
+  40: 'disposable-surgeons-gown',
+  42: 'disposable-wraparound-gown',
+  44: 'ppe-kit',
+};
+
 export default function DisposableSectionPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12; // Changed to 12 for better 4-column grid
@@ -51,7 +63,7 @@ export default function DisposableSectionPage() {
           {currentProducts.map((product) => (
             <Link
               key={product.id}
-              href={`/disposable-section/${product.slug}`}
+              href={PRODUCT_SLUGS[product.id] ? `/disposable-section/${PRODUCT_SLUGS[product.id]}` : `/disposable-section/${product.id}`}
               className="group"
             >
               {/* Product Card - NEW STYLE */}

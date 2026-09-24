@@ -1,5 +1,13 @@
 import React from "react";
 
+export const metadata = {
+  title: "About Us | Crown Healthcare Disposables",
+  description: "Delivering quality hospital disposables and medical solutions with trust, innovation, and commitment.",
+  alternates: {
+    canonical: "https://crownhealthcare.co.in/about",
+  },
+};
+
 export default function About() {
   return (
     <section className="bg-white">

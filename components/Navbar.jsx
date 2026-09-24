@@ -3,17 +3,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, Search } from "lucide-react";
-// OPTION 1: If productsData.js is in same folder as Navbar
-// import { getAllProducts } from "./productsData";
 
-// OPTION 2: If productsData.js is in root data folder
-// import { getAllProducts } from "@/data/productsData";
-
-// OPTION 3: If productsData.js is in utils folder
-// import { getAllProducts } from "@/utils/productsData";
-
-// OPTION 4: If productsData.js is in lib folder
-import { getAllProducts } from "@/lib/productsData";
+import { getAllProducts, getProductUrl } from "@/lib/productsData";
 
 const siteData = {
   hero: {
@@ -89,15 +80,17 @@ export default function Navbar() {
       <nav className="flex items-center justify-between px-6 lg:px-10 py-4 border-b bg-white relative z-50 sticky top-0 shadow-sm">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <img
-            src="/assests/img/new_logo.png"
-            alt="Logo"
-            className="h-20 lg:h-24"
-          />
+          <Link href="/">
+            <img
+              src="/assests/img/new_logo.png"
+              alt="Logo"
+              className="h-20 lg:h-24 cursor-pointer"
+            />
+          </Link>
         </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden lg:flex gap-8 text-gray-600 absolute left-1/2 -translate-x-1/2">
+        <ul className="hidden lg:flex gap-8 text-gray-600 absolute left-1/2 -translate-x-[21%]">
           {siteData.nav.map((item, i) => (
             <li
               key={i}
@@ -162,16 +155,16 @@ export default function Navbar() {
                     {searchResults.map((product) => (
                       <Link
                         key={product.id}
-                        href={`/${product.sectionSlug}/${product.id}`}
+                        href={getProductUrl(product)}
                         onMouseDown={(e) => {
                           e.preventDefault();
                           handleResultClick();
-                          window.location.href = `/${product.sectionSlug}/${product.id}`;
+                          window.location.href = getProductUrl(product);
                         }}
                         onTouchStart={(e) => {
                           e.preventDefault();
                           handleResultClick();
-                          window.location.href = `/${product.sectionSlug}/${product.id}`;
+                          window.location.href = getProductUrl(product);
                         }}
                         className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
                       >
@@ -256,16 +249,16 @@ export default function Navbar() {
               {searchResults.map((product) => (
                 <Link
                   key={product.id}
-                  href={`/${product.sectionSlug}/${product.id}`}
+                  href={getProductUrl(product)}
                   onMouseDown={(e) => {
                     e.preventDefault();
                     handleResultClick();
-                    window.location.href = `/${product.sectionSlug}/${product.id}`;
+                    window.location.href = getProductUrl(product);
                   }}
                   onTouchStart={(e) => {
                     e.preventDefault();
                     handleResultClick();
-                    window.location.href = `/${product.sectionSlug}/${product.id}`;
+                    window.location.href = getProductUrl(product);
                   }}
                   className="flex items-center gap-3 p-3 hover:bg-gray-50 border-b last:border-b-0 transition-colors cursor-pointer"
                 >
