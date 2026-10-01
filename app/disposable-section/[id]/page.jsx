@@ -22,7 +22,7 @@ const getProductHref = (productId) => (
     : `/disposable-section/${productId}`
 );
 
-export function DisposableProductDetail({ productId }) {
+function DisposableProductDetail({ productId }) {
   const product = getProductById(productId);
 
   // Check if product exists
