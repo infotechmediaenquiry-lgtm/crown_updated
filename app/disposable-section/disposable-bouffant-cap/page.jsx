@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import "../product.css";
+import ProductQuoteForm from "@/components/ProductQuoteForm";
 
 const COMPARISON = [
   { feature: "Material", poly: "Non-Woven Fabric", nonwoven: "Polyester / Nylon Net" },
@@ -271,21 +272,12 @@ export default function DisposableBouffantCapPage() {
             <p className="supplier-text">As a trusted disposable bouffant cap supplier in India, Crown Healthcare Disposables specializes in bulk manufacturing and supply of high-quality caps for various industries. We cater to large-scale requirements with consistent product quality, competitive pricing, and efficient delivery.</p>
             <p className="supplier-text-last">Our manufacturing capabilities allow us to offer customized solutions based on material, size, and application needs, making us a preferred choice for businesses looking for a reliable disposable bouffant cap manufacturer and exporter.</p>
           </div>
-          <div id="contact" className="contact-card">
-            <h3 className="contact-title">Request a Bulk Quote</h3>
-            <div className="form-fields">
-              {["Your Name", "Company / Organisation", "Email Address", "Phone Number"].map(ph => (
-                <input key={ph} placeholder={ph} className="form-input" />
-              ))}
-              <select className="form-select">
-                <option>Select Cap Type</option>
-                <option>Non-Woven Bouffant Cap</option>
-                <option>Net Bouffant Cap</option>
-                <option>Both Types</option>
-              </select>
-              <button className="form-btn">Submit Enquiry →</button>
-            </div>
-          </div>
+          <ProductQuoteForm 
+            productName="Disposable Bouffant Cap" 
+            title="Request a Bulk Quote" 
+            selectPlaceholder="Select Cap Type" 
+            selectOptions={["Non-Woven Bouffant Cap", "Net Bouffant Cap", "Both Types"]} 
+          />
         </div>
       </section>
 

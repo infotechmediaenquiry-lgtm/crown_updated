@@ -3,11 +3,13 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req) {
   try {
-    const { name, email, phone, subject, message } = await req.json();
+    const { name, email, phone, subject, message, requirements, productName, company, productType } = await req.json();
 
-    if (!name || !email || !message) {
-      return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+    if (!name || !email) {
+      return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
     }
+
+    const finalMessage = message || requirements || "Bulk quote / product inquiry request";
 
     const transporter = nodemailer.createTransport({
       host: "smtp.hostinger.com",
@@ -21,18 +23,19 @@ export async function POST(req) {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-
-      // ✅ SAME EMAIL = receive bhi yahi karega
       to: process.env.EMAIL_USER,
-
-      subject: subject || "New Contact Form",
-
+      bcc: process.env.BCC_EMAIL || 'infotechmediaenquiry@gmail.com',
+      replyTo: email,
+      subject: subject || (productName ? `New Inquiry: ${productName}` : "New Contact Form"),
       html: `
-        <h2>New Contact Form Submission</h2>
+        <h2>New Contact Form / Quote Submission</h2>
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Phone:</b> ${phone || "N/A"}</p>
-        <p><b>Message:</b><br/> ${message}</p>
+        ${company ? `<p><b>Company / Organisation:</b> ${company}</p>` : ''}
+        ${productName ? `<p><b>Product:</b> ${productName}</p>` : ''}
+        ${productType ? `<p><b>Selected Option / Type:</b> ${productType}</p>` : ''}
+        <p><b>Requirements / Message:</b><br/> ${finalMessage}</p>
       `,
     };
 
