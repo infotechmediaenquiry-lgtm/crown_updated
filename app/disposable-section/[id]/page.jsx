@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, use } from 'react';
 import Link from 'next/link';
-import { notFound, redirect } from 'next/navigation';
+import { notFound, redirect, useRouter } from 'next/navigation';
 import { getProductById, getRelatedProducts } from '@/lib/productsData';
 
 const PRODUCT_SLUGS = {
@@ -23,6 +23,7 @@ const getProductHref = (productId) => (
 );
 
 function DisposableProductDetail({ productId }) {
+  const router = useRouter();
   const product = getProductById(productId);
 
   // Check if product exists
@@ -61,8 +62,7 @@ function DisposableProductDetail({ productId }) {
       const data = await response.json();
 
       if (response.ok) {
-        setSubmitStatus({ type: 'success', message: 'Thank you! Your inquiry has been sent successfully.' });
-        setContactForm({ name: '', email: '', phone: '', message: '' });
+        router.push('/thank-you');
       } else {
         setSubmitStatus({ type: 'error', message: data.error || 'Failed to send message. Please try again.' });
       }

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function ProductQuoteForm({ 
   productName = "Medical Disposable", 
@@ -8,6 +9,7 @@ export default function ProductQuoteForm({
   selectOptions = null,
   selectPlaceholder = "Select Option"
 }) {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -47,18 +49,7 @@ export default function ProductQuoteForm({
       const data = await response.json();
 
       if (response.ok) {
-        setSubmitStatus({
-          type: 'success',
-          message: 'Thank you! Your enquiry has been sent successfully. We will get back to you soon.'
-        });
-        setFormData({
-          name: '',
-          company: '',
-          email: '',
-          phone: '',
-          productType: '',
-          requirements: ''
-        });
+        router.push('/thank-you');
       } else {
         setSubmitStatus({
           type: 'error',
