@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 
 export const metadata = {
   title: "Thank You | Crown Healthcare Disposables",
@@ -13,6 +14,17 @@ export const metadata = {
 export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-between">
+      {/* Event snippet for Submit lead form conversion page */}
+      <Script id="google-ads-conversion" strategy="afterInteractive">
+        {`
+          gtag('event', 'conversion', {
+              'send_to': 'AW-18486408766/FNi9CMTXyowdEL7sgO9E',
+              'value': 1.0,
+              'currency': 'INR'
+          });
+        `}
+      </Script>
+
       {/* Breadcrumb */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
