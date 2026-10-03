@@ -1,7 +1,10 @@
 "use client";
 import React from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+  const pathname = usePathname();
+
   // PDF Download Handler
   const handleDownload = () => {
     const link = document.createElement('a');
@@ -11,6 +14,10 @@ export default function Footer() {
     link.click();
     document.body.removeChild(link);
   };
+
+  if (pathname === '/thank-you') {
+    return null;
+  }
 
   return (
     <footer className="w-full">
