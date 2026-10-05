@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import "../product.css";
+import ProductQuoteForm from "@/components/ProductQuoteForm";
 
 const SPECS = [
   { feature: "Material", value: "Non-Woven Fabric / Polypropylene" },
@@ -254,16 +255,7 @@ export default function DisposableCoverallPage() {
               As a coverall supplier in India, we understand the importance of consistent supply and dependable product performance in industries that rely on disposable P.P.E for maintaining cleanliness and safety.
             </p>
           </div>
-          <div id="contact" className="contact-card">
-            <h3 className="contact-title">Request a Quote</h3>
-            <div className="form-fields">
-              {["Your Name", "Company / Organisation", "Email Address", "Phone Number"].map(ph => (
-                <input key={ph} placeholder={ph} className="form-input" />
-              ))}
-              <textarea placeholder="Your Requirements" className="form-input" rows="3" />
-              <button className="form-btn">Submit Enquiry →</button>
-            </div>
-          </div>
+          <ProductQuoteForm productName="Disposable Coverall" />
         </div>
       </section>
 

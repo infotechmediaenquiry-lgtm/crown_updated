@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import "../product.css";
+import ProductQuoteForm from "@/components/ProductQuoteForm";
 
 const FAQS = [
   { q: "What is a disposable face mask used for?", a: "A disposable face mask is used during surgery and nursing to help reduce bacterial migration and support hygiene in healthcare environments." },
@@ -140,7 +141,7 @@ export default function DisposableFaceMaskPage() {
         <h2 className="supplier-heading">Disposable Face Mask Supplier in India</h2>
         <p className="supplier-text">Crown Healthcare Disposables is a dependable disposable face mask manufacturer and supplier in India, supporting healthcare and related industries with essential protective products. We aim to meet the growing demand for disposable face masks used in environments where hygiene and infection control are important.</p>
         <p className="supplier-text-last">As a disposable face mask supplier, our approach is centered on reliability, consistency, and practical usability. We support customers with disposable protective solutions that align with hygiene requirements.</p>
-      </div><div id="contact" className="contact-card"><h3 className="contact-title">Request a Quote</h3><div className="form-fields">{["Your Name", "Company / Organisation", "Email Address", "Phone Number"].map(ph => <input key={ph} placeholder={ph} className="form-input" />)}<textarea placeholder="Your Requirements" className="form-input" rows="3" /><button className="form-btn">Submit Enquiry →</button></div></div></div></section>
+      </div><ProductQuoteForm productName="Disposable Face Mask" /></div></section>
 
       <section className="products-section"><div className="products-inner"><p className="section-label">Our Commitment</p><h2 className="section-heading">Why Choose Crown Healthcare Disposables</h2><div className="product-card card-hover"><div className="product-card-body"><p className="product-card-desc">Choosing the right disposable face mask manufacturer in India is important for businesses and healthcare facilities that rely on consistent hygiene practices. Crown Healthcare Disposables focuses on providing dependable protective products that support real operational needs.</p><p className="product-card-desc">Our focus is on supporting customers with disposable protective solutions that align with hygiene requirements, making us a trusted choice for businesses looking for a reliable manufacturing partner.</p></div></div></div></section>
 

@@ -1,8 +1,10 @@
 "use client"
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function ContactUsPage() {
+  const router = useRouter();
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
@@ -30,11 +32,7 @@ export default function ContactUsPage() {
       const data = await response.json();
 
       if (response.ok) {
-        setSubmitStatus({ 
-          type: 'success', 
-          message: 'Thank you for contacting us! We will get back to you within 24 hours.' 
-        });
-        setContactForm({ name: '', email: '', phone: '', subject: '', message: '' });
+        router.push('/thank-you');
       } else {
         setSubmitStatus({ 
           type: 'error', 
@@ -241,8 +239,8 @@ export default function ContactUsPage() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Phone</p>
+                    <p className="text-gray-900 font-semibold">+91 9702667544</p>
                     <p className="text-gray-900 font-semibold">+91 9152965752</p>
-                    <p className="text-gray-900 font-semibold">+91 84549 49544</p>
                   </div>
                 </div>
 

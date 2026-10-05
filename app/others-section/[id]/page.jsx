@@ -1,10 +1,11 @@
 "use client"
 import React, { useState, use } from 'react';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, useRouter } from 'next/navigation';
 import { getProductById, getRelatedProducts } from '@/lib/productsData';
 
 export default function OthersProductDetailPage({ params }) {
+  const router = useRouter();
   const resolvedParams = use(params);
   const productId = parseInt(resolvedParams.id);
   
@@ -46,8 +47,7 @@ export default function OthersProductDetailPage({ params }) {
       const data = await response.json();
 
       if (response.ok) {
-        setSubmitStatus({ type: 'success', message: 'Thank you! Your inquiry has been sent successfully.' });
-        setContactForm({ name: '', email: '', phone: '', message: '' });
+        router.push('/thank-you');
       } else {
         setSubmitStatus({ type: 'error', message: data.error || 'Failed to send message. Please try again.' });
       }

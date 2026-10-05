@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Search } from "lucide-react";
 
 import { getAllProducts, getProductUrl } from "@/lib/productsData";
@@ -23,6 +24,7 @@ const siteData = {
 };
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -74,6 +76,10 @@ export default function Navbar() {
     setSearchQuery("");
     setIsOpen(false);
   };
+
+  if (pathname === '/thank-you') {
+    return null;
+  }
 
   return (
     <div>

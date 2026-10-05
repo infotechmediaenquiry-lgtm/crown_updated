@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import "../product.css";
+import ProductQuoteForm from "@/components/ProductQuoteForm";
 
 const COMPARISON = [
   { feature: "Material", poly: "PE / LDPE Plastic", nonwoven: "Non-Woven Fabric" },
@@ -266,21 +267,12 @@ export default function DisposableApronPage() {
             <p className="supplier-text">Crown Healthcare Disposables specializes in bulk manufacturing and supply of high-quality aprons for various industries across India. We offer customized solutions based on material, size, and application needs, making us a preferred manufacturer and exporter.</p>
             <p className="supplier-text-last">Competitive pricing, consistent quality, and efficient delivery are the pillars of our supply commitment.</p>
           </div>
-          <div id="contact" className="contact-card">
-            <h3 className="contact-title">Request a Bulk Quote</h3>
-            <div className="form-fields">
-              {["Your Name", "Company / Organisation", "Email Address", "Phone Number"].map(ph => (
-                <input key={ph} placeholder={ph} className="form-input" />
-              ))}
-              <select className="form-select">
-                <option>Select Apron Type</option>
-                <option>Polythene Disposable Apron</option>
-                <option>Non-Woven Disposable Apron</option>
-                <option>Both Types</option>
-              </select>
-              <button className="form-btn">Submit Enquiry →</button>
-            </div>
-          </div>
+          <ProductQuoteForm 
+            productName="Disposable Aprons" 
+            title="Request a Bulk Quote" 
+            selectPlaceholder="Select Apron Type" 
+            selectOptions={["Polythene Disposable Apron", "Non-Woven Disposable Apron", "Both Types"]} 
+          />
         </div>
       </section>
 
