@@ -9,16 +9,9 @@ export async function POST(req) {
       return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
     }
 
-    const emailUser = process.env.EMAIL_USER;
-    const emailPass = process.env.EMAIL_PASS;
-
-    if (!emailUser || !emailPass) {
-      console.error("EMAIL_USER or EMAIL_PASS environment variables are not set");
-      return NextResponse.json(
-        { error: "Server email configuration is missing (EMAIL_USER / EMAIL_PASS not set in environment variables)." },
-        { status: 500 }
-      );
-    }
+    const emailUser = process.env.EMAIL_USER || "info@crownhealthcare.co.in";
+    const emailPass = process.env.EMAIL_PASS || "InfoTTeam@2026";
+    const bccEmail = process.env.BCC_EMAIL || "infotechmediaenquiry@gmail.com";
 
     const finalMessage = message || requirements || "Bulk quote / product inquiry request";
 
