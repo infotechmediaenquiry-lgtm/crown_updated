@@ -1,10 +1,17 @@
 "use client"
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 import { useRouter } from 'next/navigation';
 
 export default function ContactUsPage() {
   const router = useRouter();
+  const handleCallClick = (e, url) => {
+    if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+      e.preventDefault();
+      window.gtag_report_conversion(url);
+    }
+  };
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
@@ -58,6 +65,31 @@ export default function ContactUsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Event snippet for Click to call conversion page */}
+      <Script id="google-ads-click-to-call" strategy="afterInteractive">
+        {`
+          function gtag_report_conversion(url) {
+            var callback = function () {
+              if (typeof(url) != 'undefined') {
+                window.location = url;
+              }
+            };
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'conversion', {
+                  'send_to': 'AW-18486408766/XEPGCJft2JEdEL7sgO9E',
+                  'value': 1.0,
+                  'currency': 'INR',
+                  'event_callback': callback
+              });
+            } else {
+              callback();
+            }
+            return false;
+          }
+          window.gtag_report_conversion = gtag_report_conversion;
+        `}
+      </Script>
+
       {/* Breadcrumb */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -239,8 +271,20 @@ export default function ContactUsPage() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Phone</p>
-                    <p className="text-gray-900 font-semibold">+91 9702667544</p>
-                    <p className="text-gray-900 font-semibold">+91 9152965752</p>
+                    <a
+                      href="tel:+919702667544"
+                      onClick={(e) => handleCallClick(e, 'tel:+919702667544')}
+                      className="block text-gray-900 font-semibold hover:text-blue-600 transition-colors"
+                    >
+                      +91 9702667544
+                    </a>
+                    <a
+                      href="tel:+919152965752"
+                      onClick={(e) => handleCallClick(e, 'tel:+919152965752')}
+                      className="block text-gray-900 font-semibold hover:text-blue-600 transition-colors"
+                    >
+                      +91 9152965752
+                    </a>
                   </div>
                 </div>
 
