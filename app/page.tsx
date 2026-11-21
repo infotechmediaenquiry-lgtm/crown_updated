@@ -11,10 +11,12 @@ import AllProductsPage from "@/components/AllProductsPage";
 import AboutHome from "@/components/AboutHome";
 import Footer from "@/components/Footer";
 import Certificate from "@/components/Certificate";
+import WorkshopPopup from "@/components/WorkshopPopup";
 
 export default function Home() {
 	return (
 		<>
+			<WorkshopPopup />
 			{/* <Hero/> */}
 			<HeroHome/>
 			<AllProductsPage/>
